@@ -19,9 +19,9 @@
 | ps.sh |   A ps replacement script.    |
 | ns.sh | A netstat replacement script. |
 | ProcList.cpp | A ps replacement program written in C++ |
-| ProcList.go | A netstat replacement program written in C++ |
-| NetList.cpp | COMING SOON |
-| NetList.go | COMING SOON |
+| ProcList.go | A ps replacement program written in Go |
+| NetList.cpp | A netstat replacement program written in C++ |
+| NetList.go | A netstat replacement program written in Go |
 
 
 
