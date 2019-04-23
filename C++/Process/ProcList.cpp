@@ -29,20 +29,36 @@ int main()
     string FileContents; 
     string dir = string("/proc/");
     vector<string> files = vector<string>();
+    bool is_line_one = true;
 
     dirm.getDir(dir,files);
 
     for (unsigned int i = 0;i < files.size();i++) 
         {
-
+        
          ProcStatusPath = "/proc/"+files[i]+"/status";
 
         cout << endl;
         for (unsigned int e = 0; e < 7; e++) 
             {
+                if (e == 0)
+                {
+                is_line_one = true; 
                 statusStream.open(ProcStatusPath);
-                parse.Keyword(statusStream,searchStrings[e]);
-                statusStream.close();    
+                parse.Keyword(statusStream,searchStrings[e],is_line_one);
+                statusStream.close();
+                is_line_one = false;   
+                }
+                else if (e >= 0)
+                {
+                statusStream.open(ProcStatusPath);
+                parse.Keyword(statusStream,searchStrings[e],is_line_one);
+                statusStream.close();
+                }
+                else 
+                {
+                    cout << "Loop Error: Likely source is e" << endl; // Replace with better error handling
+                }    
             }
    
         }
