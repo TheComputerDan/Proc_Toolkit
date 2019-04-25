@@ -60,9 +60,8 @@ int main()
                     cout << "Loop Error: Likely source is e" << endl; // Replace with better error handling
                 }    
             }
-        cout << endl; // Final Endline for readability
-   
         }
+        cout << endl; // Final Endline for readability
     }
     else
     {
