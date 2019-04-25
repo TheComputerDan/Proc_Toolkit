@@ -9,7 +9,6 @@ class parser {
             {
                 string line;
                 bool first_enter;
-                string tab = " ";
                 while (getline(stream, line))
                     {
                         if (line.find(token) != string::npos)
@@ -23,7 +22,7 @@ class parser {
                             }
                             else if (is_first == false)
                             {
-                                cout << tab << line << endl;
+                                cout << line << endl;
                             }
                             else 
                             {
