@@ -15,7 +15,7 @@ class parser {
                         {
                             if (is_first == true)
                             {
-                                printf("\033[1;32m");
+                                printf("\033[1;36m");
                                 cout << line << endl;           // Find a better way to handle this
                                 printf("\033[0m");
                                 
