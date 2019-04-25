@@ -9,7 +9,7 @@ class parser {
             {
                 string line;
                 bool first_enter;
-                string tab = "    ";
+                string tab = "  ";
                 while (getline(stream, line))
                     {
                         if (line.find(token) != string::npos)
