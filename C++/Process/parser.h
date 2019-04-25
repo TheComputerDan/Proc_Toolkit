@@ -38,5 +38,9 @@ class parser {
         
                     }
     
-            }               
+            }
+        void fd_search(ifstream & stream) // search through fd for symlinks to associate with ports
+        {
+            cout << "function currently unavailable" << endl;
+        }               
 };

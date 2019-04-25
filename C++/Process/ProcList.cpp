@@ -25,7 +25,9 @@ int main()
     {
     
     ifstream statusStream;
+    string proc = "/proc/";
     string ProcStatusPath;
+    string ProcfdPath;
     string FileContents; 
     string dir = string("/proc/");
     vector<string> files = vector<string>();
@@ -36,7 +38,8 @@ int main()
     for (unsigned int i = 0;i < files.size();i++) 
         {
         
-         ProcStatusPath = "/proc/"+files[i]+"/status";
+         ProcStatusPath = proc+files[i]+"/status";
+         ProcfdPath = proc+files[i]+"fd";
 
         cout << endl;
         for (unsigned int e = 0; e < 7; e++) 
@@ -54,6 +57,12 @@ int main()
                 statusStream.open(ProcStatusPath);
                 parse.Keyword(statusStream,searchStrings[e],is_line_one);
                 statusStream.close();
+                statusStream.clear();
+                
+                statusStream.open(ProcfdPath);
+                parse.fd_search(statusStream);
+                statusStream.close;
+                statusStream.clear;
                 }
                 else 
                 {
