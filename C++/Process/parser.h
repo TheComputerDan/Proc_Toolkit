@@ -22,7 +22,7 @@ class parser {
                             }
                             else if (is_first == false)
                             {
-                                cout << '\t'/2 << line << endl;
+                                cout << "   " << line << endl;
                             }
                             else 
                             {
