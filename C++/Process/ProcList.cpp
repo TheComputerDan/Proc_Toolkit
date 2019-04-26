@@ -65,6 +65,10 @@ int main()
                             statusStream.close();
                             statusStream.clear();
                         }
+                    else 
+                    {
+                        cout << "Failed to check:"<< ProcfdPath << endl;
+                    }
                 }
                 else 
                 {
