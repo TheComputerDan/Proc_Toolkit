@@ -39,7 +39,7 @@ int main()
         {
         
          ProcStatusPath = proc+files[i]+"/status";
-         ProcfdPath = proc+files[i]+"fd";
+         ProcfdPath = proc+files[i]+"/fd";
 
         cout << endl;
         for (unsigned int e = 0; e < 7; e++) 
