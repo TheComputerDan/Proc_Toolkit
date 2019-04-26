@@ -61,8 +61,8 @@ int main()
                 
                 statusStream.open(ProcfdPath);
                 parse.fd_search(statusStream);
-                statusStream.close;
-                statusStream.clear;
+                statusStream.close();
+                statusStream.clear();
                 }
                 else 
                 {
