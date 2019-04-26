@@ -58,16 +58,18 @@ int main()
                 parse.Keyword(statusStream,searchStrings[e],is_line_one);
                 statusStream.close();
                 statusStream.clear();
-                
-                statusStream.open(ProcfdPath);
-                parse.fd_search(statusStream);
-                statusStream.close();
-                statusStream.clear();
+                    if (e == 7)
+                        {
+                            statusStream.open(ProcfdPath);
+                            parse.fd_search(statusStream);
+                            statusStream.close();
+                            statusStream.clear();
+                        }
                 }
                 else 
                 {
                     cout << "Loop Error: Likely source is e" << endl; // Replace with better error handling
-                }    
+                } 
             }
         }
         cout << endl; // Final Endline for readability
