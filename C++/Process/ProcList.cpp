@@ -58,7 +58,7 @@ int main()
                 parse.Keyword(statusStream,searchStrings[e],is_line_one);
                 statusStream.close();
                 statusStream.clear();
-                    if (e == 7)
+                    if (e == 6)
                         {
                             statusStream.open(ProcfdPath);
                             parse.fd_search(statusStream);
