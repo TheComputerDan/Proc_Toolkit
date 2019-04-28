@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "readlink.h"
 using namespace std;
 
 class parser {
@@ -39,9 +40,13 @@ class parser {
                     }
     
             }
-        void fd_search(ifstream & stream) // search through fd for symlinks to associate with ports
+        string fd_search(string linkSym) // search through fd for symlinks to associate with ports
         {
-            cout << "function currently unavailable" << endl;
-
-        }               
+            readSym readl;
+            socket = readl.do_readlink(linkSym);
+            return socket;
+            //cout << "function currently unavailable" << endl;
+        }   
+    private:
+        string socket;           
 };

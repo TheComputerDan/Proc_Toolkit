@@ -60,10 +60,11 @@ int main()
                 statusStream.clear();
                     if (e == 6)
                         {
-                            statusStream.open(ProcfdPath);
-                            parse.fd_search(statusStream);
-                            statusStream.close();
-                            statusStream.clear();
+                            cout << parse.fd_search(ProcfdPath);
+                            //statusStream.open(ProcfdPath);
+                            //parse.fd_search(statusStream);
+                            //statusStream.close();
+                            //statusStream.clear();
                         }
                 }
                 else 
