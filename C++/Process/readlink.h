@@ -1,3 +1,4 @@
+/*
 #include <unistd.h>
 #include <limits.h>
 #include <string>
@@ -13,6 +14,7 @@ class readSym
             buff[len] = '\0';
             return string(buff);
         }
-            /* handle error condition */
+           
         }
 };
+*/
