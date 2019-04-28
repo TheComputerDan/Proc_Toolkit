@@ -42,11 +42,11 @@ class parser {
             }
         string fd_search(string linkSym) // search through fd for symlinks to associate with ports
         {
-            readSym readl;
-            socket = readl.do_readlink(linkSym);
-            return socket;
+            //readSym readl;
+            //socket = readl.do_readlink(linkSym);
+            //return socket;
             //cout << "function currently unavailable" << endl;
         }   
     private:
-        string socket;           
+        //string socket;           
 };
