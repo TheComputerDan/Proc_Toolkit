@@ -21,7 +21,7 @@ class dirManip{
 
             while ((dirp = readdir(dp)) != NULL) {
                 if(is_number(dirp->d_name) == true) // This was added to allow only numeric directories to be stored to the files variable
-                    files.push_back(string(dirp->d_name));
+                    files.push_back(string(dirp->d_name)); // Adds the element to the vector
             }
                 closedir(dp);
                 return 0;

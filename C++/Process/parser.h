@@ -17,13 +17,13 @@ class parser {
                             if (is_first == true)
                             {
                                 printf("\033[1;36m");
-                                cout << line << endl;           // Find a better way to handle this
+                                cout << line << endl;           // Will be replaced with cleaner formatting 
                                 printf("\033[0m");
                                 
                             }
                             else if (is_first == false)
                             {
-                                cout << line << endl;
+                                cout << line << endl; 
                             }
                             else 
                             {
