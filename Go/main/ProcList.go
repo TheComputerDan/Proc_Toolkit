@@ -15,17 +15,17 @@ func isNumber(s string) bool {
 	return err == nil
 }
 
-func main() { 
-	var ProcNum[8]string
-	
+func main() {
+	var ProcNum [8]string
+
 	files, err := ioutil.ReadDir("/proc/")
 	if err != nil {
 		log.Fatal(err)
 	}
 	for _, f := range files {
 		fmt.Println(f.Name())
-		
+
 		//fmt.Println(isNumber(f.Name()),"\n")
-		
+
 	}
 }
