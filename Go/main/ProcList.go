@@ -1,31 +1,50 @@
-//https://stackoverflow.com/questions/14668850/list-directory-in-go
-//https://stackoverflow.com/questions/45686163/how-to-write-isnumeric-function-in-golang/45686455
-
 package main
 
 import (
 	"fmt"
+	"sort"
 	"io/ioutil"
-	"log"
 	"strconv"
+	"log"
 )
 
-func isNumber(s string) bool {
-	_, err := strconv.ParseFloat(s, 64)
+func isNum(v string) bool {
+	_, err := strconv.ParseFloat(v,64)
 	return err == nil
 }
 
-func main() {
-	var ProcNum [8]string
 
-	files, err := ioutil.ReadDir("/proc/")
+func main() {
+	count := 0
+
+	pidStringSlice := make([]string,0)
+	pidIntSlice := make([]int,0)
+
+	proc := "/proc/"
+	files, err := ioutil.ReadDir(proc)
 	if err != nil {
 		log.Fatal(err)
 	}
-	for _, f := range files {
-		fmt.Println(f.Name())
-
-		//fmt.Println(isNumber(f.Name()),"\n")
-
+	for _, pid := range files {
+		if isNum(pid.Name()) == true {
+			pidStringSlice = append(pidStringSlice, pid.Name())
+			count += 1
+			
+		}
 	}
+	for _, pidString := range pidStringSlice {
+		pidInt, err := strconv.Atoi(pidString)
+		if err != nil {
+			panic(err)
+		}
+		pidIntSlice = append(pidIntSlice,pidInt)
+	}
+sort.Ints(pidIntSlice)
+
+fmt.Println("Contents:", pidIntSlice)
+
 }
+
+
+
+
