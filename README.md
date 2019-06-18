@@ -23,7 +23,7 @@
 
 ### Development Notes
 - The compiled versions of the toolkit are being developed to wrap `ps` and `netstat`/`ss` like functionality into one executable program. This is in place to remove the need for too many different tools and allow for easy information gathering.
-- The Go `netstat`/`ss` like functionality will be implemented first as it will be taking less time due to the `os` library having inbuilt functionality for reading symbolic links. The symbolic links in `/proc/pid#/fd/` can correlate to an open socket which can be matched with an `inode` in `/proc/net/tcp`, `/proc/net/tcp6`, `/proc/net/udp`, or `/proc/net/udp6` that will then give us the port number and other information that is of use in replicating `netstat`/`ss` functionalities
+- The Go `netstat`/`ss` like functionality will be implemented first as it will be taking less time due to the `os` library having inbuilt functionality for reading symbolic links. The symbolic links in `/proc/PID/fd/` can correlate to an open socket which can be matched with an `inode` in `/proc/net/tcp`, `/proc/net/tcp6`, `/proc/net/udp`, or `/proc/net/udp6` that will then give us the port number and other information that is of use in replicating `netstat`/`ss` functionalities
 
 
 
