@@ -1,0 +1,17 @@
+image: "go:latest"
+
+before_script:
+  - echo "Running"
+
+stages: [lint, test]
+
+linter:
+  stage: lint
+  script: 
+    - go get -u golang.org/x/lint/golint
+    - golint ./...
+
+tester: 
+  stage: test
+  script:
+    - go run ./Go/main/ProcList.go
