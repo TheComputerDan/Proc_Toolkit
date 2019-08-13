@@ -9,7 +9,8 @@ linter:
   stage: lint
   script: 
     - go get -u golang.org/x/lint/golint
-    - golint ./...
+    - pwd
+    #- golint ./...
 
 tester: 
   stage: test
